@@ -20,7 +20,7 @@ const greeting = {
   <Dynamic />,
   
   resumeLink:
-    "https://drive.google.com/file/d/1cUBZYJuMDVJFnCm_PzYu4pRrs16RyGx0/view?usp=drive_link",
+    "https://drive.google.com/file/d/1RHdV6vTv7G3za0c8cH37KLql0bIzMV3w/view?usp=drive_link",
   mail: "mailto:anshkamra1238@gmail.com",
 };
 
@@ -455,6 +455,19 @@ const experience = {
           description:
             " Managing social media, creating impactful content, and developing strategies to support fundraising and awareness initiatives for underprivileged children. ",
           color: "#4285F4",
+        },
+
+        {
+          title: "Student volunteer",
+          company: "UIET, Kurukshetra University",
+          company_url: "",
+          logo_path: "dal.png",
+          duration: "",
+          location: " Kurukshetra, India",
+          description:
+            // " Managing social media, creating impactful content, and developing strategies to support fundraising and awareness initiatives for underprivileged children. ",
+            "Student volunteer in the Database Team for Techno-Cultural Fest, Excelsior 2K22, ensuring data integrity and accessibility through data entry, student coordination, and online registration form creation.",
+            color: "#4285F4",
         },
        
       ],

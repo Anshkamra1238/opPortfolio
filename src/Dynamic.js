@@ -46,7 +46,7 @@ function Type() {
         fontSize: "24px",
         // fontWeight: "bold",
         // textAlign: "left", // Align text to the left
-        color: "white", // Set text color to white
+        color: "#E52E54", // Set text color to white
         padding: "110", // Remove padding
         margin: "0px", // Remove margin
         // position: "absolute", // Position the text absolutely
