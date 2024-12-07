@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import { Fade } from "react-reveal";
+import { motion } from "framer-motion"; // Import Framer Motion
 import { projectsHeader, projects, socialMediaLinks } from "../../portfolio.js";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
@@ -22,33 +22,41 @@ function Projects(props) {
     <div className="projects-main">
       <Header theme={theme} setTheme={props.setTheme} />
       <div className="basic-projects">
-        <Fade bottom duration={2000} distance="40px">
-          <div className="projects-heading-div">
-            <div className="projects-heading-img-div">
-              <ProjectsImg theme={theme} />
-            </div>
-            <div className="projects-heading-text-div">
-              <h1
-                className="projects-heading-text"
-                style={{ color: theme.text }}
-              >
-                {projectsHeader.title}
-              </h1>
-              <p
-                className="projects-header-detail-text subTitle"
-                style={{ color: theme.secondaryText }}
-              >
-                {projectsHeader["description"]}
-              </p>
-            </div>
+        {/* Projects Heading with Framer Motion */}
+        <motion.div
+          className="projects-heading-div"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          <div className="projects-heading-img-div">
+            <ProjectsImg theme={theme} />
           </div>
-        </Fade>
+          <div className="projects-heading-text-div">
+            <h1
+              className="projects-heading-text"
+              style={{ color: theme.text }}
+            >
+              {projectsHeader.title}
+            </h1>
+            <p
+              className="projects-header-detail-text subTitle"
+              style={{ color: theme.secondaryText }}
+            >
+              {projectsHeader["description"]}
+            </p>
+          </div>
+        </motion.div>
       </div>
+
+      {/* Display Projects */}
       <div className="repo-cards-div-main">
         {projects.data.map((repo) => {
-          return <ProjectCard repo={repo} theme={theme} />;
+          return <ProjectCard key={repo.title} repo={repo} theme={theme} />;
         })}
       </div>
+
+      {/* More Projects Button */}
       <br />
       <br />
       <br />
