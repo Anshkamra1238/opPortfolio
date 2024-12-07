@@ -1,9 +1,10 @@
 /* Change this file to get your personal Porfolio */
-import Type from "./Type";
+// import Type from "./Type";
 // Website related settings
+import Dynamic from "./Dynamic";
 const settings = {
   isSplash: true, // Change this to true if you want to use the splash screen.
-  useCustomCursor: false, // Change this to false if you want the good'ol cursor
+  useCustomCursor: true, // Change this to false if you want the good'ol cursor
   googleTrackingID: "UA-174238252-2",
 };
 
@@ -15,7 +16,9 @@ const greeting = {
   nickname: "AK",
   full_name: "Ansh Kamra",
   subTitle:
-    <Type/>,
+  // "Full Stack Developer, Machine Learning Enthusiast. Always learning.",
+  <Dynamic />,
+  
   resumeLink:
     "https://drive.google.com/file/d/1cUBZYJuMDVJFnCm_PzYu4pRrs16RyGx0/view?usp=drive_link",
   mail: "mailto:anshkamra1238@gmail.com",

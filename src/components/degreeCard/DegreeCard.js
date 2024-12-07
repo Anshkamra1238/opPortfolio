@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 import "./DegreeCard.css";
+import { Fade, Flip } from "react-reveal";
 import { style } from "glamor";
 
 function DegreeCard(props) {
@@ -10,7 +10,7 @@ function DegreeCard(props) {
   const style_img = style({
     width: "220px",
     height: "auto",
-    borderRadius: "50%",
+    borderRadius: " 50%",
     padding: "10px",
     border: `1px solid ${theme.text}`,
     marginRight: "50px",
@@ -65,88 +65,75 @@ function DegreeCard(props) {
     },
   });
 
-  // Variants for animation
-  const imageVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  };
-
-  const bodyVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  };
-
   return (
-    <motion.div className="degree-card">
-      <motion.div
-        {...style_img}
-        variants={imageVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <img
-          style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
-            transform: "scale(50%, 50%)",
-          }}
-          src={require(`../../assests/images/${degree.logo_path}`)}
-          alt={degree.alt_name}
-        />
-      </motion.div>
-
-      <motion.div
-        {...card_body}
-        variants={bodyVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="body-header">
-          <div className="body-header-title">
-            <h2 className="card-title" style={{ color: theme.text }}>
-              {degree.title}
-            </h2>
-            <h3 className="card-subtitle" style={{ color: theme.text }}>
-              {degree.subtitle}
-            </h3>
-          </div>
-          <div className="body-header-duration">
-            <h3 className="duration" style={{ color: theme.text }}>
-              {degree.duration}
-            </h3>
-          </div>
+    <div className="degree-card">
+      <Flip left duration={2000}>
+        <div {...style_img}>
+          <img
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              transform: "scale(50%, 50%)",
+            }}
+            src={require(`../../assests/images/${degree.logo_path}`)}
+            alt={degree.alt_name}
+          />
         </div>
-
-        <div className="body-content">
-          {degree.descriptions.map((sentence) => {
-            return (
-              <p key={sentence} className="content-list" style={{ color: theme.text }}>
-                {sentence}
-              </p>
-            );
-          })}
-          <a
-            href={degree.website_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none", textAlign: "center" }}
+      </Flip>
+      <Fade right duration={2000} distance="40px">
+        <div {...card_body}>
+          <div
+            className="body-header"
+            // style={{ backgroundColor: theme.accentColor }}
           >
-            <motion.p
-              {...button_visit}
-              style={{
-                marginRight: "23px",
-                textDecoration: "none",
-                float: "right",
-                backgroundColor: theme.accentColor,
-              }}
-              whileHover={{ scale: 1.05 }}
+            <div className="body-header-title">
+              <h2 className="card-title" style={{ color: theme.text }}>
+                {degree.title}
+              </h2>
+              <h3 className="card-subtitle" style={{ color: theme.text }}>
+                {degree.subtitle}
+              </h3>
+            </div>
+            <div className="body-header-duration">
+              <h3 className="duration" style={{ color: theme.text }}>
+                {degree.duration}
+              </h3>
+            </div>
+          </div>
+          <div className="body-content">
+            {degree.descriptions.map((sentence) => {
+              return (
+                <p
+                  key={sentence}
+                  className="content-list"
+                  style={{ color: theme.text }}
+                >
+                  {sentence}
+                </p>
+              );
+            })}
+            <a
+              href={degree.website_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", textAlign: "center" }}
             >
-              Visit Website
-            </motion.p>
-          </a>
+              <p
+                {...button_visit}
+                style={{
+                  marginRight: "23px",
+                  textDecoration: "none",
+                  float: "right",
+                  backgroundColor: theme.accentColor,
+                }}
+              >
+                Visit Website
+              </p>
+            </a>
+          </div>
         </div>
-      </motion.div>
-    </motion.div>
+      </Fade>
+    </div>
   );
 }
 
