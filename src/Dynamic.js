@@ -8,7 +8,7 @@ function Type() {
     "UI/UX Designer",
   ];
   
-  const typingSpeed = 100; // Speed for typing each character
+  const typingSpeed = 150; // Speed for typing each character
   const pauseTime = 1000;  // Time to pause before typing the next string
 
   const [currentText, setCurrentText] = useState("");

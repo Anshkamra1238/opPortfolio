@@ -1,5 +1,5 @@
 /* Change this file to get your personal Porfolio */
-// import Type from "./Type";
+
 // Website related settings
 import Dynamic from "./Dynamic";
 const settings = {
@@ -20,7 +20,7 @@ const greeting = {
   <Dynamic />,
   
   resumeLink:
-    "https://drive.google.com/file/d/1RHdV6vTv7G3za0c8cH37KLql0bIzMV3w/view?usp=drive_link",
+    "https://drive.google.com/file/d/1eJTiS8iB7ePkNoL5a0IYG2unTxUjUUqm/view?usp=sharing",
   mail: "mailto:anshkamra1238@gmail.com",
 };
 
