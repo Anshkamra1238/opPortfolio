@@ -20,7 +20,7 @@ const greeting = {
   <Dynamic />,
   
   resumeLink:
-    "https://drive.google.com/file/d/1Ek2Qu0tMFYKZADQier7ox4163-wGUR8w/view?usp=sharing",
+    "https://drive.google.com/file/d/1oe6uIOgT6M6GmHPuKVJuGpg06Div1o51/view?usp=sharing",
   mail: "mailto:anshkamra1238@gmail.com",
 };
 
